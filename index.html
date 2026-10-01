@@ -65,6 +65,7 @@
   <section style="margin-top: 72px">
     <h2 style="margin: 0 0 20px; font-size: 15px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.44 0.09 55)">News</h2>
     <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.55">
+      <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Sep 2026</span><span>One paper has been accepted to <strong>NeurIPS 2026</strong>!</span></div>
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Mar 2026</span><span>Started my Ph.D. at SIIT, KAIST.</span></div>
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Jan 2026</span><span>One paper has been accepted to <strong>ICLR 2026</strong>!</span></div>
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Jul 2025</span><span>One paper has been accepted to <strong>ACM Multimedia 2025</strong>!</span></div>
@@ -77,9 +78,9 @@
     <h2 style="margin: 0 0 20px; font-size: 15px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.44 0.09 55)">Papers Under Review</h2>
     <div style="display: flex; flex-direction: column; gap: 20px">
       <div style="display: flex; flex-direction: column; gap: 5px">
-        <span style="font-size: 17px; font-weight: 600; line-height: 1.4; text-wrap: pretty">Before It Fades: Reinforcing Temporal Representations at Inference Time in VideoLLMs</span>
-        <span style="font-size: 15px; color: #57534A; line-height: 1.5"><strong style="color: #1E1C18">Youngwoo Shin</strong>, Yusung Ro, Minseo Kim, Junmo Kim&dagger;</span>
-        <span style="font-size: 14.5px; color: #57534A; line-height: 1.55; text-wrap: pretty">Reinforcing fading temporal signals in VideoLLMs at inference time, without additional training.</span>
+        <span style="font-size: 17px; font-weight: 600; line-height: 1.4; text-wrap: pretty">Suppressing the Shortcut Hidden Behind the Gains of VideoLLM Fine-Tuning</span>
+        <span style="font-size: 15px; color: #57534A; line-height: 1.5"><strong style="color: #1E1C18">Youngwoo Shin</strong>, Jongsuk Kim&dagger;, Junmo Kim&dagger;</span>
+        <span style="font-size: 14.5px; color: #57534A; line-height: 1.55; text-wrap: pretty">Suppressing the shortcut that fine-tuning builds in VideoLLMs by intervening on the update through projection.</span>
         <div style="display: flex; gap: 6px; margin-top: 2px; font-family: 'IBM Plex Mono', monospace">
           <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Model Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">MLLMs</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Reasoning</span>
         </div>
@@ -105,6 +106,28 @@
       </div>
     </div>
     <div style="display: flex; flex-direction: {{ pubSortDir }}; gap: 32px">
+
+      <sc-if value="{{ showBIF }}" hint-placeholder-val="{{ true }}">
+      <article class="pub-card" style="display: flex; gap: 24px; align-items: flex-start">
+        <sc-if value="{{ showThumbnails }}" hint-placeholder-val="{{ true }}">
+        <div style="flex: 0 0 200px">
+          <image-slot id="pub-thumb-bif" shape="rounded" radius="8" style="width: 200px; height: 130px" fit="contain" src="uploads/pipeline_new_v4.png" placeholder="Figure / teaser"></image-slot>
+        </div>
+        </sc-if>
+        <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+          <h3 style="margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; text-wrap: pretty"><a href="https://github.com/Youngwoo-git/Before-It-Fades" style="color: #1E1C18; border-bottom-color: #C9C4B8">Before It Fades: Reinforcing Temporal Representations at Inference Time in VideoLLMs</a></h3>
+          <p style="margin: 0; font-size: 15px; color: #57534A; line-height: 1.5"><strong style="color: #1E1C18">Youngwoo Shin</strong>, Yusung Ro, Minseo Kim, Junmo Kim&dagger;</p>
+          <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.55 0.11 45); font-weight: 500">NeurIPS 2026</p>
+          <p style="margin: 0; font-size: 14.5px; color: #57534A; line-height: 1.55; text-wrap: pretty">Reinforcing fading temporal signals in VideoLLMs at inference time, without additional training.</p>
+          <div style="display: flex; gap: 6px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace">
+            <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Model Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">MLLMs</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Reasoning</span>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 2px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
+            <a href="https://github.com/Youngwoo-git/Before-It-Fades" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="fa-brands fa-github"></i>code</a>
+          </div>
+        </div>
+      </article>
+      </sc-if>
 
       <sc-if value="{{ showSSG }}" hint-placeholder-val="{{ true }}">
       <article class="pub-card" style="display: flex; gap: 24px; align-items: flex-start">
@@ -220,13 +243,14 @@ class Component extends DCLogic {
   state = { sortNewest: true, filter: 'all' };
   renderVals() {
     const f = this.state.filter;
-    const tags = { ssg: ['interpretability', 'generative'], b4dl: ['mllms'] };
+    const tags = { bif: ['interpretability', 'mllms'], ssg: ['interpretability', 'generative'], b4dl: ['mllms'] };
     return {
       pubSortDir: this.state.sortNewest ? 'column' : 'column-reverse',
       sortLabel: this.state.sortNewest ? 'newest first ↓' : 'oldest first ↑',
       toggleSort: () => this.setState(s => ({ sortNewest: !s.sortNewest })),
       pubFilter: f,
       setFilter: (e) => this.setState({ filter: e.target.value }),
+      showBIF: f === 'all' || tags.bif.includes(f),
       showSSG: f === 'all' || tags.ssg.includes(f),
       showB4DL: f === 'all' || tags.b4dl.includes(f),
       showNews: this.props.showNews ?? true,
