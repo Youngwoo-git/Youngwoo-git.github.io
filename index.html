@@ -24,7 +24,7 @@
   ::selection { background: oklch(0.4 0.085 55 / 0.15); }
   @media (max-width: 620px) {
     article.pub-card { flex-direction: column !important; align-items: stretch !important; }
-    article.pub-card > div:first-child { flex: none !important; width: 100% !important; }
+    article.pub-card > div:first-child { flex: none !important; width: 100% !important; height: 200px !important; margin-top: 0 !important; }
     article.pub-card > div:first-child image-slot { width: 100% !important; height: 180px !important; }
   }
 </style>
@@ -108,10 +108,10 @@
     <div style="display: flex; flex-direction: {{ pubSortDir }}; gap: 32px">
 
       <sc-if value="{{ showBIF }}" hint-placeholder-val="{{ true }}">
-      <article class="pub-card" style="display: flex; gap: 24px; align-items: center">
+      <article class="pub-card" style="display: flex; gap: 24px; align-items: flex-start">
         <sc-if value="{{ showThumbnails }}" hint-placeholder-val="{{ true }}">
-        <div style="flex: 0 0 200px">
-          <img src="uploads/Before_It_Fades.png" alt="Before It Fades overview" style="display: block; width: 100%; height: auto; border-radius: 8px">
+        <div style="flex: 0 0 200px; height: 140px; box-sizing: border-box; padding: 8px; background: #FFFFFF; border-radius: 8px; margin-top: 4px">
+          <img src="uploads/Before_It_Fades.png" alt="Before It Fades overview" style="display: block; width: 100%; height: 100%; object-fit: contain">
         </div>
         </sc-if>
         <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
@@ -130,10 +130,10 @@
       </sc-if>
 
       <sc-if value="{{ showSSG }}" hint-placeholder-val="{{ true }}">
-      <article class="pub-card" style="display: flex; gap: 24px; align-items: center">
+      <article class="pub-card" style="display: flex; gap: 24px; align-items: flex-start">
         <sc-if value="{{ showThumbnails }}" hint-placeholder-val="{{ true }}">
-        <div style="flex: 0 0 200px">
-          <img src="uploads/ssg_web.png" alt="SSG overview" style="display: block; width: 100%; height: auto; border-radius: 8px">
+        <div style="flex: 0 0 200px; height: 140px; box-sizing: border-box; padding: 8px; background: #FFFFFF; border-radius: 8px; margin-top: 4px">
+          <img src="uploads/ssg_web.png" alt="SSG overview" style="display: block; width: 100%; height: 100%; object-fit: contain">
         </div>
         </sc-if>
         <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
@@ -152,10 +152,10 @@
       </sc-if>
 
       <sc-if value="{{ showB4DL }}" hint-placeholder-val="{{ true }}">
-      <article class="pub-card" style="display: flex; gap: 24px; align-items: center">
+      <article class="pub-card" style="display: flex; gap: 24px; align-items: flex-start">
         <sc-if value="{{ showThumbnails }}" hint-placeholder-val="{{ true }}">
-        <div style="flex: 0 0 200px">
-          <img src="uploads/b4dl_web.png" alt="B4DL overview" style="display: block; width: 100%; height: auto; border-radius: 8px">
+        <div style="flex: 0 0 200px; height: 140px; box-sizing: border-box; padding: 8px; background: #FFFFFF; border-radius: 8px; margin-top: 4px">
+          <img src="uploads/b4dl_web.png" alt="B4DL overview" style="display: block; width: 100%; height: 100%; object-fit: contain">
         </div>
         </sc-if>
         <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
