@@ -51,9 +51,9 @@
       I am currently looking for research internship opportunities. Feel free to <a href="mailto:yshin0917@kaist.ac.kr">reach out</a>!
     </p>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 620px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #57534A">
-      <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 9px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Model Interpretability</span>
-      <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 9px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">MLLMs</span>
-      <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 9px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Reasoning</span>
+      <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 9px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Interpretability</span>
+      <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 9px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Temporal Reasoning</span>
+      <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 9px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Multimodal Learning</span>
       <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 9px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Generative Models</span>
     </div>
     <nav style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
@@ -92,7 +92,7 @@
           <p style="margin: 0; font-size: 15px; color: #57534A; line-height: 1.5"><strong style="color: #1E1C18">Youngwoo Shin</strong>, Jongsuk Kim&dagger;, Junmo Kim&dagger;</p>
           <p style="margin: 0; font-size: 14.5px; color: #57534A; line-height: 1.55; text-wrap: pretty">Suppressing the shortcut that fine-tuning builds in VideoLLMs by intervening on the update through projection.</p>
           <div style="display: flex; gap: 6px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace">
-          <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Model Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">MLLMs</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Reasoning</span>
+          <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Temporal Reasoning</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Multimodal Learning</span>
           </div>
           <div style="display: flex; gap: 12px; margin-top: 2px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
             <a href="https://arxiv.org/abs/2611.25776" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="ai ai-arxiv"></i>arXiv</a><a href="https://github.com/Youngwoo-git/VETO" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="fa-brands fa-github"></i>code</a>
@@ -110,8 +110,9 @@
         <span style="position: relative; display: inline-flex; align-items: center">
           <select value="{{ pubFilter }}" onChange="{{ setFilter }}" style="appearance: none; WebkitAppearance: none; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B675E; background: transparent; border: 1px solid #DDD9CF; border-radius: 999px; padding: 0 26px 0 12px; height: 28px; box-sizing: border-box; cursor: pointer">
             <option value="all">All Topics</option>
-            <option value="interpretability">Model Interpretability</option>
-            <option value="mllms">MLLMs</option>
+            <option value="interpretability">Interpretability</option>
+            <option value="temporal">Temporal Reasoning</option>
+            <option value="multimodal">Multimodal Learning</option>
             <option value="generative">Generative Models</option>
           </select>
           <span style="position: absolute; right: 11px; pointer-events: none; font-size: 9px; color: #6B675E">▼</span>
@@ -134,7 +135,7 @@
           <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.55 0.11 45); font-weight: 500">NeurIPS 2026</p>
           <p style="margin: 0; font-size: 14.5px; color: #57534A; line-height: 1.55; text-wrap: pretty">Reinforcing fading temporal signals in VideoLLMs at inference time, without additional training.</p>
           <div style="display: flex; gap: 6px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace">
-            <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Model Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">MLLMs</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Reasoning</span>
+            <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Temporal Reasoning</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Multimodal Learning</span>
           </div>
           <div style="display: flex; gap: 12px; margin-top: 2px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
             <a href="https://arxiv.org/abs/2610.01595" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="ai ai-arxiv"></i>arXiv</a><a href="https://github.com/Youngwoo-git/Before-It-Fades" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="fa-brands fa-github"></i>code</a>
@@ -156,7 +157,7 @@
           <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.55 0.11 45); font-weight: 500">ICLR 2026</p>
           <p style="margin: 0; font-size: 14.5px; color: #57534A; line-height: 1.55; text-wrap: pretty">Training-free guidance for visual autoregressive (VAR) models, derived from an information-theoretic view of next-scale generation.</p>
           <div style="display: flex; gap: 6px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace">
-            <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Model Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Generative Models</span>
+            <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Interpretability</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Generative Models</span>
           </div>
           <div style="display: flex; gap: 12px; margin-top: 2px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
             <a href="https://arxiv.org/abs/2602.05534" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="ai ai-arxiv"></i>arXiv</a><a href="https://openreview.net/forum?id=S6oLw7VixT" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="fa-solid fa-book-open"></i>OpenReview</a><a href="https://github.com/Youngwoo-git/SSG" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="fa-brands fa-github"></i>code</a>
@@ -178,7 +179,7 @@
           <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.55 0.11 45); font-weight: 500">ACM Multimedia 2025</p>
           <p style="margin: 0; font-size: 14.5px; color: #57534A; line-height: 1.55; text-wrap: pretty">The first benchmark and baseline MLLM for spatio-temporal understanding of 4D LiDAR.</p>
           <div style="display: flex; gap: 6px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace">
-            <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">MLLMs</span>
+            <span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Temporal Reasoning</span><span style="border: 1px solid oklch(0.88 0.04 80); border-radius: 4px; padding: 3px 8px; font-size: 11px; background: oklch(0.96 0.02 80); color: oklch(0.38 0.075 55)">Multimodal Learning</span>
           </div>
           <div style="display: flex; gap: 12px; margin-top: 2px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
             <a href="https://www.arxiv.org/abs/2508.05269" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="ai ai-arxiv"></i>arXiv</a><a href="https://github.com/kaist-siit-lab/StarLab_B4DL" style="border: 1px solid #DDD9CF; border-radius: 6px; padding: 3px 10px; display: inline-flex; align-items: center; gap: 6px" style-hover="border-color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)"><i class="fa-brands fa-github"></i>code</a>
@@ -318,7 +319,7 @@ class Component extends DCLogic {
   state = { sortNewest: true, filter: 'all' };
   renderVals() {
     const f = this.state.filter;
-    const tags = { bif: ['interpretability', 'mllms'], ssg: ['interpretability', 'generative'], b4dl: ['mllms'] };
+    const tags = { bif: ['interpretability', 'temporal', 'multimodal'], ssg: ['interpretability', 'generative'], b4dl: ['temporal', 'multimodal'] };
     return {
       pubSortDir: this.state.sortNewest ? 'column' : 'column-reverse',
       sortLabel: this.state.sortNewest ? 'newest first ↓' : 'oldest first ↑',
