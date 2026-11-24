@@ -312,6 +312,7 @@
 
   <footer style="margin-top: 96px; padding-top: 24px; border-top: 1px solid #E5E1D6; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578">
     <span>© 2026 Youngwoo Shin</span>
+    <span>{{ lastUpdated }}</span>
     <span>yshin0917@kaist.ac.kr</span>
   </footer>
   <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#8A6A3B"></rect><text x="50" y="62" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#FAF9F6" text-anchor="middle">YS</text></svg></template>
@@ -323,6 +324,19 @@ class Component extends DCLogic {
   state = { sortNewest: true, filter: 'all', copied: null };
   renderVals() {
     const f = this.state.filter;
+    if (!this._lastUpdatedRequested) {
+      this._lastUpdatedRequested = true;
+      try {
+        fetch(window.location.href, { method: 'HEAD', cache: 'no-store' })
+          .then((r) => {
+            const h = r.headers.get('last-modified');
+            const d = h ? new Date(h) : null;
+            if (!d || isNaN(d.getTime())) return;
+            this.setState({ lastUpdated: 'Last updated ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) });
+          })
+          .catch(() => {});
+      } catch (e) {}
+    }
     const bib = {
       VETO: `@misc{shin2026veto,
   title={Suppressing the Shortcut Hidden Behind the Gains of VideoLLM Fine-Tuning},
@@ -405,6 +419,7 @@ class Component extends DCLogic {
       showNews: this.props.showNews ?? true,
       showThumbnails: this.props.showThumbnails ?? true,
       showUnderReview: this.props.showUnderReview ?? true,
+      lastUpdated: this.state.lastUpdated || '',
     };
   }
 }
