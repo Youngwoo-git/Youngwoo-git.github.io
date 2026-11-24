@@ -69,6 +69,8 @@
   .pub-tags > span { white-space: nowrap; }
   .pub-links { flex-wrap: wrap; }
   .pub-links > * { white-space: nowrap; }
+  .news-collapsed > :nth-child(n+8) { display: none !important; }
+  .news-list:not(:has(> :nth-child(8))) + .news-more { display: none; }
   @media (max-width: 720px) {
     article.pub-card { flex-direction: column !important; align-items: stretch !important; }
     article.pub-card > div:first-child { flex: none !important; width: 100% !important; height: 200px !important; margin-top: 0 !important; }
@@ -110,7 +112,7 @@
   <sc-if value="{{ showNews }}" hint-placeholder-val="{{ true }}">
   <section style="margin-top: 72px">
     <h2 style="margin: 0 0 20px; font-size: 15px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.44 0.09 55)">News</h2>
-    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.55">
+    <div class="news-list {{ newsClass }}" style="display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.55">
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Nov 2026</span><span>I will present <a href="https://arxiv.org/abs/2610.01595"><em>Before It Fades</em></a> at <strong>NeurIPS 2026</strong> in Sydney, Australia<img src="assets/flags/au.svg" alt="Australian flag" style="display: inline-block; height: 0.8em; width: auto; vertical-align: -0.05em; margin-left: 5px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1)">! Poster Session 4, Wed Dec 9, 17:00 AEDT, Hall 1-4 #S3402. Let's chat!</span></div>
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Sep 2026</span><span>One paper has been accepted to <strong>NeurIPS 2026</strong>!</span></div>
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Apr 2026</span><span><a href="https://arxiv.org/abs/2602.05534"><em>SSG</em></a> presented at <strong>ICLR 2026</strong> in Rio de Janeiro, Brazil<img src="assets/flags/br.svg" alt="Brazilian flag" style="display: inline-block; height: 0.8em; width: auto; vertical-align: -0.05em; margin-left: 5px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1)">.</span></div>
@@ -119,6 +121,7 @@
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Oct 2025</span><span><a href="https://www.arxiv.org/abs/2508.05269"><em>B4DL</em></a> presented at <strong>ACM Multimedia 2025</strong> in Dublin, Ireland<img src="assets/flags/ie.svg" alt="Irish flag" style="display: inline-block; height: 0.8em; width: auto; vertical-align: -0.05em; margin-left: 5px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1)">.</span></div>
       <div style="display: flex; gap: 18px"><span style="flex: 0 0 84px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8578; padding-top: 2px">Jul 2025</span><span>One paper has been accepted to <strong>ACM Multimedia 2025</strong>!</span></div>
     </div>
+    <button type="button" class="news-more" onClick="{{ toggleNews }}" aria-expanded="{{ newsExpanded }}" style="align-self: flex-start; margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B675E; background: none; border: 1px solid #DDD9CF; border-radius: 999px; padding: 0 12px; height: 28px; box-sizing: border-box; cursor: pointer; white-space: nowrap; transition: color 0.15s, border-color 0.15s, background 0.15s" style-hover="border-color: oklch(0.4 0.085 55); color: oklch(0.4 0.085 55); background: oklch(0.96 0.02 80)">{{ newsToggleLabel }}</button>
   </section>
   </sc-if>
 
@@ -362,7 +365,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showNews&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}, &quot;showThumbnails&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Publications&quot;}, &quot;showUnderReview&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Publications&quot;}}">
 class Component extends DCLogic {
-  state = { sortNewest: true, filter: 'all', copied: null };
+  state = { sortNewest: true, filter: 'all', copied: null, showAllNews: false };
   renderVals() {
     const f = this.state.filter;
     if (!this._lastUpdatedRequested) {
@@ -461,6 +464,10 @@ class Component extends DCLogic {
       showThumbnails: this.props.showThumbnails ?? true,
       showUnderReview: this.props.showUnderReview ?? true,
       lastUpdated: this.state.lastUpdated || '',
+      newsClass: this.state.showAllNews ? '' : 'news-collapsed',
+      newsExpanded: this.state.showAllNews ? 'true' : 'false',
+      newsToggleLabel: this.state.showAllNews ? 'show less ↑' : 'show more ↓',
+      toggleNews: () => this.setState(s => ({ showAllNews: !s.showAllNews })),
     };
   }
 }
